@@ -36,14 +36,14 @@ namespace AlienGame.Managers
         /// </summary>
         public static void SaveData()
         {
-            //WriteToFile(defaultFilePath, StatsAndAchievements.GetDefaultData)
+            WriteToFile(defaultFilePath, StatsAndAchievements.GetDefaultData)
         }
         /// <summary>
         /// Resets Data by deleting files for testing purposes 
         /// </summary>
         public static void ResetData()
         {
-            //DeleteFile(defaultFilePath);
+            DeleteFile(defaultFilePath);
         }
         /// <summary>
         /// Loads all data from files
