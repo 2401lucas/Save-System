@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public abstract class SaveTemplate
 {
     /// <summary>
@@ -11,7 +7,7 @@ public abstract class SaveTemplate
     /// <summary>
     /// File Path for Saved Data
     /// </summary>
-    public abstract string filePath { get; }
+    protected abstract string filePath { get; }
     /// <summary>
     /// Save Data to File
     /// </summary>
@@ -31,7 +27,7 @@ public abstract class SaveTemplate
     /// <returns></returns>
     protected abstract void InterpretData(string[] data);
 
-    protected int ParseToint(string value)
+    protected int ParseToInt(string value)
     {
         try
         {
@@ -39,7 +35,7 @@ public abstract class SaveTemplate
         }
         catch (System.Exception)
         {
-            Debug.LogError("Data was unable to be parsed");
+            //Debug.LogError("Data was unable to be parsed");
             return 0;
         }
     }
@@ -52,7 +48,7 @@ public abstract class SaveTemplate
         }
         catch (System.Exception)
         {
-            Debug.LogError("Data was unable to be parsed");
+            //Debug.LogError("Data was unable to be parsed");
             return 0;
         }
     }
@@ -65,7 +61,7 @@ public abstract class SaveTemplate
         }
         catch (System.Exception)
         {
-            Debug.LogError("Data was unable to be parsed");
+            //Debug.LogError("Data was unable to be parsed");
             return 0;
         }
     }
