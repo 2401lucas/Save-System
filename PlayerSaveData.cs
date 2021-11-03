@@ -1,17 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class PlayerSaveData : SaveTemplate
 {
-    public override string filePath => "playerSave";
+    protected override string filePath => "playerSave";
 
     public float highscore = 0;
-    public float currency = 0;
+    public int currency = 0;
 
     protected override string[] GetData()
     {
-        throw new System.NotImplementedException();
+        string[] data = new string[1];
+        data[0] = $"{highscore}{DataSplitter}{currency}";
+        return data;
     }
 
     protected override void InterpretData(string[] data)
@@ -22,6 +20,6 @@ public class PlayerSaveData : SaveTemplate
         string[] splitData = data[0].Split(DataSplitter);
 
         highscore = ParseToFloat(splitData[0]);
-        currency = ParseToFloat(splitData[1]);
+        currency = ParseToInt(splitData[1]);
     }
 }

@@ -1,8 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
+/// <summary>
+/// Application.persistentDataPath can be replaced by the desired path to the Save Location
+/// </summary>
 public class FileManager
 {
     public static string[] ReadFromFile(string filePath, string fileEnding = ".txt") {
